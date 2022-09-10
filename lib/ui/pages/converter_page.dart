@@ -1,5 +1,6 @@
 import 'package:direct_select/direct_select.dart';
 import 'package:flutter/material.dart';
+
 import '../../utils/constants.dart';
 import '../widgets/key_pad.dart';
 import '../widgets/selection_item.dart';
@@ -80,7 +81,10 @@ class _ConverterPageState extends State<ConverterPage> {
               // la tasa de cambio se puede obtener en la estructura de datos rates
               // Aquí incluimos el widget KeyPad, mandando los nombres de las dos monedas y la tasa de cambio
               child: Center(
-            child: KeyPad(textCurrency1: currencies[currency1], textCurrency2: currencies[currency2], rate: rates[currency1][currency2]),
+            child: KeyPad(
+                textCurrency1: currencies[currency1],
+                textCurrency2: currencies[currency2],
+                rate: rates[currency1][currency2]),
           ))
         ]));
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'one_key.dart';
 
 // en este widget mostramos el keypad y los valores de las monedas
@@ -22,6 +23,7 @@ class KeyPad extends StatefulWidget {
 class _KeyPadState extends State<KeyPad> {
   // valor de la moneda convertida
   double _currency2 = 0;
+
   // el valor de la moneda que es introducida en el keypad
   int _currency1 = 0;
 
@@ -36,7 +38,7 @@ class _KeyPadState extends State<KeyPad> {
         // _currency1 debe cambiar con el keypad
         // _currency2 debe cambiar de acuerdo con _currency1 y la tasa de cambio
         _currency1 = int.parse(_currency1.toString() + k.toString());
-        _currency2 = _currency1*widget.rate;
+        _currency2 = _currency1 * widget.rate;
       }
     });
   }
