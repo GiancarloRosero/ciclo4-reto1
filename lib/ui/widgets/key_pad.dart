@@ -29,12 +29,10 @@ class _KeyPadState extends State<KeyPad> {
   void _onPressed(int k) {
     setState(() {
       if (k == 10) {
-        // TODO
         // cuando k es 10 se debe volver el estado a cero
         _currency1 = 0;
         _currency2 = 0;
       } else {
-        // TODO
         // _currency1 debe cambiar con el keypad
         // _currency2 debe cambiar de acuerdo con _currency1 y la tasa de cambio
         _currency1 = int.parse(_currency1.toString() + k.toString());
@@ -107,7 +105,6 @@ class _KeyPadState extends State<KeyPad> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  // TODO
                   // en cada OneKey se manda el número y _onPressed para callback
                   OneKey(number: 7, callback: _onPressed),
                   OneKey(number: 8, callback: _onPressed),
@@ -119,7 +116,6 @@ class _KeyPadState extends State<KeyPad> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  // TODO
                   // en cada OneKey se manda el número y _onPressed para callback
                   OneKey(number: 4, callback: _onPressed),
                   OneKey(number: 5, callback: _onPressed),
@@ -131,7 +127,6 @@ class _KeyPadState extends State<KeyPad> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  // TODO
                   // en cada OneKey se manda el número y _onPressed para callback
                   OneKey(number: 1, callback: _onPressed),
                   OneKey(number: 2, callback: _onPressed),
@@ -158,7 +153,6 @@ class _KeyPadState extends State<KeyPad> {
                           ))),
                 ),
               ),
-              // TODO
               // en cada OneKey se manda el número y _onPressed para callback
               OneKey(number: 0, callback: _onPressed),
             ]),
