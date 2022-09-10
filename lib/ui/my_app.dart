@@ -13,8 +13,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.grey,
         ),
-        // TODO
-        // ConverterPage es el widget que presenta la página de la aplicación
-        home: const Text('aquí colocamos ConverterPage'));
+        home: ConverterPage());
   }
 }

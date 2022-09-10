@@ -75,13 +75,13 @@ class _ConverterPageState extends State<ConverterPage> {
               ),
             ],
           ),
-          const Expanded(
+          Expanded(
               // TODO
               // los nombres de las monedas se pueden obtener en la lista currencies
               // la tasa de cambio se puede obtener en la estructura de datos rates
+              // Aquí incluimos el widget KeyPad, mandando los nombres de las dos monedas y la tasa de cambio
               child: Center(
-            child: Text(
-                'Aquí incluimos el widget KeyPad, mandando los nombres de las dos monedas y la tasa de cambio'),
+            child: KeyPad(textCurrency1: currencies[currency1], textCurrency2: currencies[currency2], rate: 3500),
           ))
         ]));
   }
