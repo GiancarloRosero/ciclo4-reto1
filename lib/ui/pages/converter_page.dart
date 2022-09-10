@@ -80,7 +80,7 @@ class _ConverterPageState extends State<ConverterPage> {
               // la tasa de cambio se puede obtener en la estructura de datos rates
               // Aquí incluimos el widget KeyPad, mandando los nombres de las dos monedas y la tasa de cambio
               child: Center(
-            child: KeyPad(textCurrency1: currencies[currency1], textCurrency2: currencies[currency2], rate: 3500),
+            child: KeyPad(textCurrency1: currencies[currency1], textCurrency2: currencies[currency2], rate: rates[currency1][currency2]),
           ))
         ]));
   }
