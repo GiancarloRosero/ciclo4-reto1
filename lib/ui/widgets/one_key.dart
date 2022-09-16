@@ -20,18 +20,21 @@ class OneKey extends StatelessWidget {
           elevation: 18.0,
           clipBehavior: Clip.antiAlias,
           child: MaterialButton(
-              key: Key(number.toString()),
-              color: Color.fromARGB(255, 10, 102, 19),
-              elevation: 5,
-              padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
-              onPressed: () {
-                callback(number);
-              },
-              child: Text(number.toString(),
-                  style: const TextStyle(
-                    fontSize: 26.0,
-                    color: Colors.white,
-                  ))),
+            key: Key(number.toString()),
+            color: Color.fromARGB(255, 10, 102, 19),
+            elevation: 5,
+            padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+            onPressed: () {
+              callback(number);
+            },
+            child: Text(
+              number.toString(),
+              style: const TextStyle(
+                fontSize: 26.0,
+                color: Colors.white,
+              ),
+            ),
+          ),
         ),
       ),
     );
