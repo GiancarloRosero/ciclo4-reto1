@@ -74,7 +74,7 @@ class _KeyPadState extends State<KeyPad> {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Color.fromARGB(255, 250, 123, 19),
                           fontSize: 35),
                     )),
               ),
@@ -98,7 +98,7 @@ class _KeyPadState extends State<KeyPad> {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Color.fromARGB(255, 243, 23, 23),
                           fontSize: 35),
                     )),
               )
@@ -143,18 +143,24 @@ class _KeyPadState extends State<KeyPad> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-                  child: MaterialButton(
-                      key: const Key("reset"),
-                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
-                      color: Theme.of(context).colorScheme.secondary,
-                      onPressed: () {
-                        _onPressed(10);
-                      },
-                      child: const Text("Reset",
-                          style: TextStyle(
-                            fontSize: 26.0,
-                            color: Colors.white,
-                          ))),
+                  child: Material(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                    elevation: 18.0,
+                    clipBehavior: Clip.antiAlias,
+                    child: MaterialButton(
+                        key: const Key("reset"),
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                        color: Color.fromARGB(255, 64, 77, 255),
+                        onPressed: () {
+                          _onPressed(10);
+                        },
+                        child: const Text("Reset",
+                            style: TextStyle(
+                              fontSize: 26.0,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ))),
+                  ),
                 ),
               ),
               // en cada OneKey se manda el número y _onPressed para callback
