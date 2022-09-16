@@ -14,9 +14,19 @@ class ConverterPage extends StatefulWidget {
 }
 
 class _ConverterPageState extends State<ConverterPage> {
+  FocusNode myFocusNode = FocusNode();
   // el estado del widget
   int currency1 = 1;
   int currency2 = 0;
+
+  @override
+  void initState(){
+    super.initState();
+    myFocusNode = FocusNode();
+    WidgetsBinding.instance.addPostFrameCallback((_){
+      FocusScope.of(context).requestFocus(myFocusNode);
+    });
+  }
 
   // función para construir el selector de monedas
   List<Widget> _buildItems() {

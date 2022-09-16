@@ -35,8 +35,10 @@ class _KeyPadState extends State<KeyPad> {
       } else {
         // _currency1 debe cambiar con el keypad
         // _currency2 debe cambiar de acuerdo con _currency1 y la tasa de cambio
-        _currency1 = int.parse(_currency1.toString() + k.toString());
-        _currency2 = _currency1*widget.rate;
+        if ((_currency1.toString() + k.toString()).length <= 18) {
+          _currency1 = int.parse(_currency1.toString() + k.toString());
+        }
+        _currency2 = _currency1 * widget.rate;
       }
     });
   }
@@ -55,7 +57,6 @@ class _KeyPadState extends State<KeyPad> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -64,21 +65,22 @@ class _KeyPadState extends State<KeyPad> {
               Expanded(
                 child: Container(),
               ),
-              Container(
-                  padding: const EdgeInsets.all(8.0),
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    _currency1.toString(),
-                    textAlign: TextAlign.right,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontSize: 35),
-                  )),
+              Expanded(
+                child: Container(
+                    padding: const EdgeInsets.all(8.0),
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      _currency1.toString(),
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.secondary,
+                          fontSize: 35),
+                    )),
+              ),
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -87,17 +89,19 @@ class _KeyPadState extends State<KeyPad> {
               Expanded(
                 child: Container(),
               ),
-              Container(
-                  padding: const EdgeInsets.all(8.0),
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    num.parse(_currency2.toStringAsFixed(4)).toString(),
-                    textAlign: TextAlign.right,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontSize: 35),
-                  ))
+              Expanded(
+                child: Container(
+                    padding: const EdgeInsets.all(8.0),
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      num.parse(_currency2.toStringAsFixed(4)).toString(),
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.secondary,
+                          fontSize: 35),
+                    )),
+              )
             ],
           ),
           Expanded(
