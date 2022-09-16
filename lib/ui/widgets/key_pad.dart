@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'one_key.dart';
 
 // en este widget mostramos el keypad y los valores de las monedas
@@ -53,6 +54,7 @@ class _KeyPadState extends State<KeyPad> {
 
   @override
   Widget build(BuildContext context) {
+    var f = NumberFormat.currency(symbol: '\$', decimalDigits: 2);
     return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -66,17 +68,19 @@ class _KeyPadState extends State<KeyPad> {
                 child: Container(),
               ),
               Expanded(
+                flex: 7,
                 child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      _currency1.toString(),
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 250, 123, 19),
-                          fontSize: 35),
-                    )),
+                  padding: const EdgeInsets.all(8.0),
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    f.format(_currency1),
+                    textAlign: TextAlign.right,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 250, 123, 19),
+                        fontSize: 35),
+                  ),
+                ),
               ),
             ],
           ),
@@ -90,17 +94,19 @@ class _KeyPadState extends State<KeyPad> {
                 child: Container(),
               ),
               Expanded(
+                flex: 7,
                 child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      num.parse(_currency2.toStringAsFixed(4)).toString(),
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 243, 23, 23),
-                          fontSize: 35),
-                    )),
+                  padding: const EdgeInsets.all(8.0),
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    f.format(_currency2),
+                    textAlign: TextAlign.right,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 243, 23, 23),
+                        fontSize: 35),
+                  ),
+                ),
               )
             ],
           ),
